@@ -33,7 +33,7 @@ function showLayerNames() {
       }</ul>`;
 }
 
-document.getElementById("btnPopulate").addEventListener("click", showLayerNames);
+// document.getElementById("btnPopulate").addEventListener("click", showLayerNames);
 
 async function cut() {
   // const document = await app.open();
