@@ -3,7 +3,7 @@ const { entrypoints } = require("uxp");
 const {app, constants} = require("photoshop");
 
   showAlert = () => {
-    alert("This is an alert message");
+    alert("目前是 v0.0.1版本");
   }
 
   entrypoints.setup({
@@ -72,7 +72,7 @@ async function cut() {
       await newDoc.trim(constants.TrimType.TRANSPARENT, true, true, true, true)
       const path = await folder.createEntry(layer.name)
       await newDoc.saveAs.png(path)
-      await newDoc.closeWithoutSaving()
+      newDoc.closeWithoutSaving()
     }
   })
 
