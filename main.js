@@ -2,7 +2,6 @@
 const { entrypoints } = require("uxp");
 const {app, constants} = require("photoshop");
 
-
   showAlert = () => {
     alert("This is an alert message");
   }
@@ -64,11 +63,13 @@ async function cut() {
 
   await require('photoshop').core.executeAsModal(async function() {
     for(var layer of layers) {
+      // width: layer.bounds.width,
+      // height: layer.bounds.height
       const newDoc = await app.documents.add({
         fill: 'transparent'
       })
       await layer.duplicate(newDoc)
-      await newDoc.trim()
+      await newDoc.trim(constants.TrimType.TRANSPARENT, true, true, true, true)
       const path = await folder.createEntry(layer.name)
       await newDoc.saveAs.png(path)
       await newDoc.closeWithoutSaving()
