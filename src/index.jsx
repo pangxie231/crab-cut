@@ -10,6 +10,8 @@ import { Home } from './panels/Home.jsx'
 
 import { entrypoints } from "uxp";
 
+import 'uno.css'
+
 const aboutController = new CommandController(({ dialog }) => <About dialog={dialog}/>, { id: "showAbout", title: "React Starter Plugin Demo", size: { width: 480, height: 480 } });
 const demosController =  new PanelController(() => <Demos/>, {id: "demos", menuItems: [
     { id: "reload1", label: "Reload Plugin", enabled: true, checked: false, oninvoke: () => location.reload() },
