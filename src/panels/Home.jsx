@@ -50,7 +50,7 @@ export const Home = () => {
       const layer = stacks.pop()
 
       const isValid = layer.name.startsWith(prefix)
-      if(isValid) {
+      if(isValid && layer.visible) {
         specifyLayers.push(layer)
       }
 
